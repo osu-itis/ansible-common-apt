@@ -1,3 +1,3 @@
 # ansible-common-apt
 
-Installs common package set on apt based machine
+Ansible role to install common package set on apt based host
