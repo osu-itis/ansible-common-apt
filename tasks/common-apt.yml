@@ -1,16 +1,11 @@
 ---
-- name: upgrade APT
-  apt: upgrade=yes
+- name: apt upgrade
+  apt:
+    upgrade: 'yes'
 
-- name: install common APT pkgs
-  apt: name={{item}} state=present update_cache=yes
-  with_items:
-    - sudo
-    - ntp
-    - ntpdate
-    - htop
-    - less
-    - lsof
-    - strace
-    - tcpdump
-    - vim
+- name: install common apt pkgs
+  apt:
+    name: ['sudo', 'ntp', 'ntpdate','htop', 'less', 'lsof', 'strace', 'tcpdump', 'vim']
+    state: present
+    update_cache: yes
+
